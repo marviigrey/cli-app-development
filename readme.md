@@ -18,3 +18,7 @@ version of the app.
 
 In the count() function, We made use of the NewScanner from the bufio package which is used for reading data, the newScanner function is used to read data delimited by spaces or new line. 
 
+We also created a testing case to test the newly created tool, we declared a variable using the NewBufferString function of the byte package to read a string content.
+The test is passed.
+
+
