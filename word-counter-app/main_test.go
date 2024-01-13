@@ -14,7 +14,7 @@ func TestCountWords(t *testing.T) {
 
 	exp := 4 //created a varible for the number of words in the mentioned string
 
-	res := count(b) //using the count fucntion to count the number of words inside b string.
+	res := count(b, false) //using the count fucntion to count the number of words inside b string.
 
 	if res != exp {
 		t.Errorf("Expected: %d got: %d", exp, res)

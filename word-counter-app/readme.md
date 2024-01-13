@@ -21,4 +21,7 @@ In the count() function, We made use of the NewScanner from the bufio package wh
 We also created a testing case to test the newly created tool, we declared a variable using the NewBufferString function of the byte package to read a string content.
 The test is passed.
 
+Next step is to add command line flags.
+To implement this we make use of the flag package. This is the package used for implementing command line flag parsing. Command line tools provide flexibility through options, we are going to use the parsing to add options when we want to count words in our application with the flag package.
+The "lines" variable defined in line 14:10 sets a new -l option thay we will use to indicate whether to count lines, the option is set to false by default which means the normal behaviour is to count just words. 
 
