@@ -1,22 +1,17 @@
 package main
-
-import (
+import(
 	"bytes"
 	"testing"
 )
-
-// a test function to test our word counter.
 func TestCountWords(t *testing.T) {
-	
-	//create a variable to initialize a new buffer to read content of type string.
+	// Declared a variable to help read an existing string using the newBufferString function.
+	b := bytes.NewBufferString("word1 word2 word3 word4")
 
-	b := bytes.NewBufferString("word1 word2 word3 word4\n")
-
-	exp := 4 //created a varible for the number of words in the mentioned string
-
-	res := count(b, false) //using the count fucntion to count the number of words inside b string.
-
-	if res != exp {
-		t.Errorf("Expected: %d got: %d", exp, res)
+	//a variable to define the result of the count(b) function.
+	res := count(b)
+	expected := 4 
+	//if we fail to get then number declared in the "expected" it will return an error.
+	if expected != res {
+		t.Errorf("expected: %v, got: %v", expected, res)
 	}
 }
