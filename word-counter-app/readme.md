@@ -25,4 +25,5 @@ The test is passed. In the test we created a function to simply count the words 
 Next step is to add command line flags.
 To implement this we make use of the flag package. This is the package used for implementing command line flag parsing. Command line tools provide flexibility through options, we are going to use the parsing to add options when we want to count words in our application with the flag package.
 The "lines" variable defined in line 14:10 sets a new -l option thay we will use to indicate whether to count lines, the option is set to false by default which means the normal behaviour is to count just words. 
+NOTE: For every function created in our main.go file or any file that contains entry program or functions we must create a specific test function for it, this will help us in building a well programmed software with no errors encountered.
 
