@@ -1,0 +1,3 @@
+In this file, I will be sharing the workflow or rather the steps taken to create the word-counter-app:
+1. create a module.
+2. Created a main.go file

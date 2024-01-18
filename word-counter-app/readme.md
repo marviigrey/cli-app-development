@@ -22,8 +22,24 @@ We also created a testing case to test the newly created tool, we declared a var
 The test is passed. In the test we created a function to simply count the words using the count function we created in our main.go file. when making unit testing, we always expect to get the result when we run the function or programme on main entry files.
 
 
-Next step is to add command line flags.
+Next step is to add command line flags:
+
 To implement this we make use of the flag package. This is the package used for implementing command line flag parsing. Command line tools provide flexibility through options, we are going to use the parsing to add options when we want to count words in our application with the flag package.
-The "lines" variable defined in line 14:10 sets a new -l option thay we will use to indicate whether to count lines, the option is set to false by default which means the normal behaviour is to count just words. 
+
+The "lines" variable defined in line 14:10 sets a new -l option thay we will use to indicate whether to count lines, the option is set to false by default which means the normal behaviour is to count just words. By using command line flags we extend the functionality of tools withoutcompromising any flexibility for users.
+
 NOTE: For every function created in our main.go file or any file that contains entry program or functions we must create a specific test function for it, this will help us in building a well programmed software with no errors encountered.
+After building for our current machine we can also build for other OS using the environment variables.
+                GOOS=windows
+OR
+
+                GOOS=macOS
+
+This process is called cross-compilation.
+
+After building my first CLI, i have been tasked by the learning resource to:
+- Add another commandLine flag, -b, to count the number of bytes in addition to the words and lines.
+- Update the count() function to accept another paramete, countBytes. When this input is set to true, the function should count bytes.
+- Write test to ensure the feature works.
+- successfully added countBytes flag to the program.
 

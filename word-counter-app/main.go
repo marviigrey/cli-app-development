@@ -2,31 +2,40 @@ package main
 
 import (
 	"bufio"
+	"flag"
 	"fmt"
 	"io"
 	"os"
-	"flag"
 )
 
 func main() {
 	//declare a new variable for command line flag:
 	lines := flag.Bool("l", false, "CountLines too")
+	bytes := flag.Bool("b", false, "CountBytes")
 	//parse the flags provided by the user:
 	flag.Parse()
-	//calling the count function to count words or lines recieved from the standard input and 
+	//calling the count function to count words or lines recieved from the standard input and
 	//prints it out.
-	fmt.Println(count(os.Stdin, *lines))
+	fmt.Println(count(os.Stdin, *lines, *bytes))
 }
-func count(r io.Reader, countLines bool) int { // a function that reads
+func count(r io.Reader, countLines bool, countBytes bool) int { // a function that reads
 	//initializes a new Scanner with the provided io.Reader r
-	
+
 	scanner := bufio.NewScanner(r)
-	//initial value of countline is set to false, negating the value using the logical operator !
-	//which means countline is true: thus, executing the code block inside the if statement.
-	if !countLines {
+	if countBytes {
+		scanner.Split(bufio.ScanBytes)
+	} else {
 		scanner.Split(bufio.ScanWords)
 	}
-	//scanner.Split(bufio.ScanWords)
+	//initial value of countline is set to false, negating the value using the logical operator !
+	//which means countline is true: thus, executing the code block inside the if statement.
+	if countLines {
+		scanner.Split(bufio.ScanLines)
+	} else {
+		scanner.Split(bufio.ScanWords)
+	}
+
+	// repeat same logic for counting bytes.
 
 	wc := 0
 
