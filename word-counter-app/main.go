@@ -22,18 +22,16 @@ func count(r io.Reader, countLines bool, countBytes bool) int { // a function th
 	//initializes a new Scanner with the provided io.Reader r
 
 	scanner := bufio.NewScanner(r)
-	if countBytes {
-		scanner.Split(bufio.ScanBytes)
-	} else {
-		scanner.Split(bufio.ScanWords)
-	}
+	
 	//initial value of countline is set to false, negating the value using the logical operator !
 	//which means countline is true: thus, executing the code block inside the if statement.
-	if countLines {
-		scanner.Split(bufio.ScanLines)
-	} else {
+	if !countLines && !countBytes {
+		
 		scanner.Split(bufio.ScanWords)
+	} else if countBytes {
+		scanner.Split(bufio.ScanBytes)
 	}
+
 
 	// repeat same logic for counting bytes.
 
