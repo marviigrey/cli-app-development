@@ -43,3 +43,5 @@ After building my first CLI, i have been tasked by the learning resource to:
 - Write test to ensure the feature works.
 - successfully added countBytes flag to the program.
 
+All assessments have been completed. 
+

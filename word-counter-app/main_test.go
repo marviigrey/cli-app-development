@@ -44,7 +44,7 @@ func TestCount(t *testing.T) {
 		countBytes := true
 
 		result := count(reader, countLines, countBytes)
-		expected := len(input) // Expected result is the length of the input string
+		expected := len(input) 
 
 		if result != expected {
 			t.Errorf("Expected %d bytes, but got %d", expected, result)
@@ -52,4 +52,4 @@ func TestCount(t *testing.T) {
 	})
 }
 
-// You can add more test cases for different scenarios.
+
